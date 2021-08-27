@@ -1,0 +1,129 @@
+.main {
+  @extend %margin-bottom-lg;
+
+  .site-search {
+    margin-bottom: $gap * 3;
+  }
+  .user-login {
+    margin-bottom: $gap * 4;
+  }
+}
+section {
+  position: relative;
+  overflow: hidden;
+}
+h1 {
+  margin-bottom: 1em;
+  font-family: $font-header;
+  @include xs-min {
+    font-size: 3rem;
+    margin-top: -10px;
+  }
+  @include xs {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  &::after {
+    position: absolute;
+    width: 100%;
+    margin-top: 0.85em;
+    margin-left: $gap;
+    content: "";
+    border-bottom: 3px solid $color-accent-light;
+  }
+}
+h2 {
+  font-family: $font-header;
+  @include xs-min {
+    margin: ($gap * 4) 0 ($gap * 3) ($gap * 3);
+    font-size: 2.5rem;
+  }
+  @include xs {
+    font-size: 1.75rem;
+    margin: ($gap * 3) 0 ($gap * 2) ($gap * 3);
+  }
+
+  &::before {
+    position: absolute;
+    left: 0;
+    width: $gap * 2;
+    margin: 0.25em 0 0 0;
+    content: "";
+    border-bottom: 3px solid $color-accent-light;
+  }
+  &::after {
+    position: absolute;
+    width: 100%;
+    margin-top: 0.85em;
+    margin-left: $gap;
+    content: "";
+    border-bottom: 3px solid $color-accent-light;
+  }
+}
+.new-films,
+.top-week {
+  &-row {
+    margin-left: -$gap-sm;
+    margin-right: -$gap-sm;
+    margin-bottom: -$gap;
+  }
+  &-item {
+    padding-left: $gap-sm;
+    padding-right: $gap-sm;
+    margin-bottom: $gap;
+    &__caption {
+      text-align: center;
+    }
+    &__image {
+      width: 100%;
+    }
+    &__title {
+      @include text-shortener;
+      font-size: 1rem;
+      font-weight: bold;
+      margin: 0;
+    }
+    &__thumbnail {
+      margin-bottom: 0;
+    }
+    &:hover {
+      h3 {
+        color: $color-white;
+      }
+      .thumbnail {
+        border-color: $color-accent;
+        background-color: $color-accent;
+      }
+    }
+  }
+}
+.film-news-item {
+  &__text {
+    text-align: justify;
+  }
+
+  &__button {
+    float: right;
+    margin-bottom: $gap * 2;
+  }
+  .thumbnail {
+    margin-bottom: 0;
+  }
+  @include xs {
+    h3 {
+      font-size: 1.25rem;
+    }
+  }
+  &:hover {
+    h3 a {
+      color: $color-accent;
+    }
+    .btn-warning {
+      background-color: $color-accent;
+    }
+    .thumbnail {
+      border-color: $color-accent;
+      background-color: $color-accent;
+    }
+  }
+}
